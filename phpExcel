@@ -146,3 +146,15 @@ $objPHPExcel->createSheet();
 $objWriter = PHPExcel_IOFactory::createWriter($objExcel, 'Excel5');
 $objWriter-save('php://output'); //直接输出到浏览器
 
+
+$oAS=$objPHPExcel->getActiveSheet();
+$val = $oAS->getCellByColumnAndRow(0,1)->getValue();
+print_r($val);
+$val = $oAS->getCellByColumnAndRow(1,1)->getValue();
+print_r($val);
+$val = $oAS->getCell("A1")->getValue();
+print_r($val);
+
+
+(string)
+PHPExcel_Cell::columnIndexFromString($highestColumn);   /字母列转换为数字列 如:AA变为27
